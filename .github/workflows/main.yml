@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@dev
       - name: Merge by labeled
-        uses: devmasx/merge-branch
+        uses: savetheales/actions_test
         with:
           label_name: 'merged in develop'
           target_branch: 'dev'
