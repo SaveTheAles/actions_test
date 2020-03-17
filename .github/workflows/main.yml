@@ -1,7 +1,6 @@
 name: Merge to dev
 on:
   pull_request:
-    branches-ignore: 'master'
     types: [labeled]
 jobs:
   merge-branch:
@@ -9,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Merge by labeled
-        uses: SaveTheAles/checkout@master
+        uses: SaveTheAles/auction_test@master
         with:
           label_name: 'merged in develop'
           target_branch: 'dev'
