@@ -1,0 +1,17 @@
+name: Merge to dev
+on:
+  pull_request:
+    branches-ignore: 'master'
+    types: [labeled]
+jobs:
+  merge-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@dev
+      - name: Merge by labeled
+        uses: devmasx/merge-branch
+        with:
+          label_name: 'merged in develop'
+          target_branch: 'dev'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
