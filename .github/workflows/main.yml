@@ -7,6 +7,7 @@ jobs:
   merge-branch:
     runs-on: ubuntu-latest
     steps:
+      - uses: SaveTheAles/checkout@master
       - name: Merge by labeled
         uses: SaveTheAles/checkout@master
         with:
