@@ -10,7 +10,7 @@ jobs:
       - name: Merge by labeled
         uses: devmasx/merge-branch@v1.1.0
         with:
-          label_name: 'merged in develop'
+          label_name: 'feature'
           target_branch: 'dev'
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKENS}}
