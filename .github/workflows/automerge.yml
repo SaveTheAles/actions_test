@@ -18,7 +18,7 @@ jobs:
         uses: "pascalgn/automerge-action@135f0bdb927d9807b5446f7ca9ecc2c51de03c4a"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKENS }}"
-          MERGE_LABELS: "feature, error"
+          MERGE_LABELS: "error"
           MERGE_METHOD: "merge"
           MERGE_COMMIT_MESSAGE: "automerged"
           MERGE_FORKS: "false"
