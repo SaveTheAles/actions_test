@@ -21,5 +21,10 @@ jobs:
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKENS }}"
           MERGE_LABELS: "feature, error"
-          MERGE_METHOD: "rebase"
+          MERGE_METHOD: "merge"
           MERGE_COMMIT_MESSAGE: "automerged"
+          MERGE_FORKS: "false"
+          MERGE_RETRIES: "6"
+          MERGE_RETRY_SLEEP: "10000"
+          UPDATE_LABELS: ""
+          UPDATE_METHOD: ""
