@@ -1,19 +1,28 @@
-name: Merge branch
+name: automerge
 on:
   push:
-    branches-ignore:
-      - master
+    branches-ignore: 
+      - 'master'
   pull_request:
-    types: [labeled]
+    types:
+      - labeled
+  check_suite: 
+    types:
+      - completed
+  status: {}
 jobs:
-  merge-branch:
+  automerge:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Merge by labeled
-        uses: devmasx/merge-branch@v1.1.0
-        with:
-          label_name: 'feature'
-          target_branch: 'dev'
+      - name: automerge
+        uses: "pascalgn/automerge-action@135f0bdb927d9807b5446f7ca9ecc2c51de03c4a"
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKENS}}
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKENS }}"
+          MERGE_LABELS: "error"
+          MERGE_METHOD: "merge"
+          MERGE_COMMIT_MESSAGE: "automerged"
+          MERGE_FORKS: "false"
+          MERGE_RETRIES: "6"
+          MERGE_RETRY_SLEEP: "10000"
+          UPDATE_LABELS: ""
+          UPDATE_METHOD: ""
